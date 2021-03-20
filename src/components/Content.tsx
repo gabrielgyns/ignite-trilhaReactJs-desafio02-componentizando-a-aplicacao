@@ -20,10 +20,10 @@ interface MovieProps {
 }
 
 interface ContentProps {
-  selectedGenreId: number;
+  selectedGenreId: Number;
 }
 
-export function Content({selectedGenreId}: ContentProps) {
+export function Content({ selectedGenreId }: ContentProps) {
   const [movies, setMovies] = useState<MovieProps[]>([]);
   const [selectedGenre, setSelectedGenre] = useState<GenreResponseProps>({} as GenreResponseProps);
 

@@ -8,7 +8,11 @@ interface GenreResponseProps {
   title: string;
 }
 
-export function SideBar() {
+interface SideBarProps {
+  handleSelectGenre: Function;
+}
+
+export function SideBar({ handleSelectGenre }: SideBarProps) {
   const [selectedGenreId, setSelectedGenreId] = useState(1);
   const [genres, setGenres] = useState<GenreResponseProps[]>([]);
 
@@ -19,6 +23,7 @@ export function SideBar() {
   }, []);
 
   function handleClickButton(id: number) {
+    handleSelectGenre(id);
     setSelectedGenreId(id);
   }
 
